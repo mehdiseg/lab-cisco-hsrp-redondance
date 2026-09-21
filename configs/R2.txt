@@ -1,0 +1,12 @@
+enable
+configure terminal
+hostname R2
+interface g0/0
+ ip address 10.0.0.3 255.255.255.0
+ standby version 2
+ standby 1 ip 10.0.0.1
+ standby 1 priority 100
+ standby 1 preempt
+ no shutdown
+end
+write memory
